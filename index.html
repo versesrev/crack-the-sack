@@ -228,8 +228,7 @@ def compute(text):
                 go(sw - w[left], sv - v[left], prev[left], right)
                 left = prev[left]
 
-    go(gw, gv, b - 1, b)
-    output.append("best_v: " + str(best_v))
+    go(gw, gv, prev[b], b)
     output.append("Cost: " + str(cost))
     output.append("Points earned: " + str(cost * 1e-3))
     return '\\n'.join(output)
